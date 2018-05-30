@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+
+    <link rel="icon" href="images/logo.png" >
+    
+    <link href="style.css" rel="stylesheet">
+
+ 
+    <!-- <script src="scripts/markers.js"></script> -->
+    <script src="scripts/map.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Cormorant Garamond" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+   
+  </head>
+ 
+  <body>
+   
+
+
+    <div class="desktop">
+      <center>
+        <h1 class="desktoph1">Suffragettes Walk</h1>
+        <p class="desktopp" > Only available on mobile devices. 
+        </p>
+
+        <img class="desktopimg" src="images/logo.png">
+      </center>
+    </div>
+
+    <div class="mobile">
+
+
+     <div id="myNav" class="overlay">
+      <div class="flex-container">
+        <div id="startWalking">Start Walking</div>
+
+        <div>
+            <br>
+            <br>
+            <a  class="button" id="mapbutt" onclick="closeNav()">MAP</a>
+        </div>
+      </div>
+    </div>
+
+    
+      <div class="headerbar"> 
+          
+    	  <h1 class="headerfont">Suffragettes Walk</h1>
+        <a href="index.html">
+          <img class="headerlogo" src="images/logo.png"> 
+        </a>  
+      </div>
+
+      <script>
+        function closeNav() {
+          document.getElementById("myNav").style.width = "0%";
+          document.getElementById("mapbutt").style.display = "none";
+          document.getElementById("startWalking").style.display = "none";
+        }
+      </script>
+
+
+
+
+      <!-- Trigger/Open The Modal -->
+      <button id="modalbutton">Information</button>
+
+      <!-- The Modal -->
+      <div id="myModal"  class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="closemodal">&times;</span>
+          <div class="katediv">
+            <img class="kate" src="images/kate.png">
+          </div>
+          <center>
+            <p>Te Papa</p>
+          
+            <p> ... </p>
+          </center>
+        </div>
+
+        <script>
+          // Get the modal
+          var modal = document.getElementById('myModal');
+
+          // Get the button that opens the modal
+          var btn = document.getElementById("modalbutton");
+
+          // Get the <span> element that closes the modal
+          var span = document.getElementsByClassName("closemodal")[0];
+
+          // When the user clicks the button, open the modal 
+          btn.onclick = function() {
+              modal.style.display = "block";
+          }
+
+          // When the user clicks on <span> (x), close the modal
+          span.onclick = function() {
+              modal.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modal) {
+                  modal.style.display = "none";
+              }
+          }
+        </script>
+      </div>
+
+
+      <div id="map">
+      </div>
+
+      <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAevtQ8Ww4oIAghz1p9fq7OLq_ctelbcJo&callback=myMap">
+      </script>
+
+    </div>  
+  </body>
+
+</html>
